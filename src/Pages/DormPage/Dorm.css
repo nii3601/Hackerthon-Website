@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+#not_leaderboard {
+        margin-top: 5vh;
+        margin-left: 5%;
+}
+
+#row2 {
+        margin-top: 2vh;
+}
+@media screen and (max-width:500px){
+        #h1_Dorm {
+                color:#ffffff;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 5vw;
+                text-align:left;
+        }
+        
+        #h2_Dorm {
+                color:#ffffff;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 3vw;
+                text-align: left;
+        }     
+}
+
+.Dorm h1 {
+        color:#ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 30px;
+        text-align: left;
+}
+
+.Dorm h2 {
+        color:#ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 20px;
+        text-align: left;
+}    
+      
