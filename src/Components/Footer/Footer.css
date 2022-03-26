@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.Footer{
+    background-color:#000000; 
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.Footer p{
+        color:#ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 10px;
+}
