@@ -21,7 +21,7 @@ function Navigation() {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
                             <Nav.Link href="/rules" id="items">Rules</Nav.Link>
-                            <Nav.Link href="/leaderboard" id="items">Leaderboard</Nav.Link>
+                            <Nav.Link href="/leaderboard" id="items">Leaderboards</Nav.Link>
                             <Nav.Link href="/register" id="items">Register</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
