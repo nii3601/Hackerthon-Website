@@ -7,6 +7,7 @@ import {Route, Routes} from 'react-router-dom';
 import Parse from "parse";
 import * as env from "./env.js";
 import Footer from './Components/Footer/Footer';
+import Dorm from './Pages/DormPage/Dorm';
 import { useEffect } from 'react';
 import { getDormScore } from './Services/getDormScore';
 import {getSectionScore} from './Services/getCampusScore';
@@ -35,6 +36,8 @@ function App() {
       <Navigator/>
       
       <Routes>
+        {/* for dorms */}
+        <Route path="/info/:dorm" element={<Dorm/>}/>
         {/* For rules */}
         <Route path="/rules" element={<Rules/>}/> 
         {/* Leader board for specific dorm i.e sections */}
