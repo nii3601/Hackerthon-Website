@@ -1,4 +1,5 @@
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import logo from '../../Images/drippy.png';
 import './Navigation.css';
 
 function Navigation() {
@@ -6,7 +7,16 @@ function Navigation() {
         <div className='Navigation'>
             <Navbar collapseOnSelect id='Nav-Back' expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand id="brand" href="/">Water Wars</Navbar.Brand>
+                    <Navbar.Brand id="brand" href="/">
+                        Water Wars
+                        <img
+                            src={logo}
+                            width="30"
+                            height="30"
+                            className="d-inline-block align-center"
+                            alt="React Bootstrap logo"
+                        />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="ms-auto">
