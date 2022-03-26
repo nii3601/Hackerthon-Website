@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import Home from './Pages/Home/Home';
+import Leaderboard from './Pages/LeaderBoard/LeaderBoard';
+import Navigator from './Components/Navigation/Navigation';
 import {Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -20,8 +22,14 @@ function App() {
           Learn React
         </a>
       </header> */}
+      <Navigator/>
+      
       <Routes>
-        <Route path="/" exact element={<Home />} />
+        {/* Leader board for specific dorm i.e sections */}
+        <Route path="/leaderboard/:dorm" element={<Leaderboard hasDorm={true}/>}/> 
+        {/* leaderboard for whole school */}
+        <Route exact path="/leaderboard/" element={<Leaderboard hasDorm={false} />}/>
+        <Route path="/" exact element={<Home/>} />
       </Routes>
       
     </div>
