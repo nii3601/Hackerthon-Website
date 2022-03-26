@@ -26,9 +26,9 @@ function App() {
       
       <Routes>
         {/* Leader board for specific dorm i.e sections */}
-        <Route path="/leaderboard/:dorm" exact element={<Leaderboard hasDorm={true}/>}/> 
+        <Route path="/leaderboard/:dorm" element={<Leaderboard hasDorm={true}/>}/> 
         {/* leaderboard for whole school */}
-        <Route path="/leaderboard/" exact element={<Leaderboard hasDorm={false} />}/>
+        <Route exact path="/leaderboard/" element={<Leaderboard hasDorm={false} />}/>
         <Route path="/" exact element={<Home/>} />
       </Routes>
       

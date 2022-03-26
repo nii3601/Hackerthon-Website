@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-.Navigation{
-
+#brand{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 14px;
 }
 
 #Nav-Back{
