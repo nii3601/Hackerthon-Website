@@ -1,6 +1,4 @@
-// import {Container,Row, Col} from 'react-bootstrap';
 import './Rules.css'
-import logo from '../../Images/drippy.png';
 
 function Rules(){
     return(
@@ -13,10 +11,16 @@ function Rules(){
                                 <h2>Each dorm has sensors installed to monitor water usage, one sensor per section</h2>
                         </li>
                         <li>
-                                <h2>Each dorm has sensors installed to monitor water usage, one sensor per section</h2>
+                                <h2>Our proprietary algoritms calculate your dorm and section score based on total water usage</h2>
                         </li>
                         <li>
-                                <h2>Each dorm has sensors installed to monitor water usage, one sensor per section</h2>
+                                <h2>Cut down on your shower time!  The average shower uses over 17 GALLONS of water!  Reducing your shower time is the easiest way to boost your dorm AND section score!</h2>
+                        </li>
+                        <li>
+                                <h2>Check back here often for up-to-the-second updates!</h2>
+                        </li>
+                        <li>
+                                <h2>Good luck!</h2>
                         </li>
                 </ul>
         </div>
