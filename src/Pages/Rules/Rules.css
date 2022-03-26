@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.Rules{
+    background-color:#000000; 
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.Rules h1{
+        color:#ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 35px;
+}
+
+.Rules h2{
+        color:#ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 20px;
+        text-align: left;
+}
+
+.Rules ul{
+        margin-left: 5%;
+}
+.Rules li{
+        background-image: url(../../Images/drippy.png);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-size: 45px;
+        padding: 15px 0 5% 55px;
+        height: 55px; 
+        list-style: none;    
+}
