@@ -14,7 +14,7 @@ function Navigation() {
                             width="30"
                             height="30"
                             className="d-inline-block align-center"
-                            alt="React Bootstrap logo"
+                            alt="Water Wars logo"
                         />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

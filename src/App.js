@@ -3,7 +3,13 @@ import Home from './Pages/Home/Home';
 import Leaderboard from './Pages/LeaderBoard/LeaderBoard';
 import Navigator from './Components/Navigation/Navigation';
 import {Route, Routes} from 'react-router-dom';
+import Parse from "parse";
+import * as env from "./env.js";
 import Footer from './Components/Footer/Footer';
+
+//initialise parse
+Parse.initialize(env.APPLICATION_ID, env.JAVASCRIPT_KEY);
+Parse.serverURL = env.SERVER_URL;
 
 function App() {
   return (
