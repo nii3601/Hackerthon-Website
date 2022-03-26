@@ -26,7 +26,9 @@
         background-repeat: no-repeat;
         background-position: left;
         background-size: 45px;
-        /* padding: 5% 0 5% 55px; */
-        height: 55px; 
+        /* top right bottom left */
+        padding: 17px 5% 0 55px;
+        margin-bottom: 30px;
+        min-height: 55px;
         list-style: none;    
 }

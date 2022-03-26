@@ -1,10 +1,10 @@
 import {Container,Row,Col} from 'react-bootstrap';
 import LeaderBoard from '../LeaderBoard/LeaderBoard'
-import './Home.css'
+import './Dorm.css'
 
-function Home(){
+function Dorm(){
     return(
-        <div className="Home">
+        <div className="Dorm">
             <Container fluid>
                 <Col>
                     <div id="not_leaderboard">
@@ -12,17 +12,17 @@ function Home(){
                             <Row>
                                 <Col>
                                     <h1 
-                                        id = "h1_home"
+                                        id = "h1_Dorm"
                                         style={{
                                             "textAlign":"left"
                                         }}
                                     >
-                                        Average Campus Water Use Per Day:
+                                        Average Dorm Water Use Per Day:
                                     </h1>
                                 </Col>
                                 <Col>
                                     <h1 
-                                        id = "h1_home"
+                                        id = "h1_Dorm"
                                         style = {{
                                             "textAlign":"left"
                                         }}
@@ -30,7 +30,7 @@ function Home(){
                                         50
                                     </h1>
                                     <h2
-                                        id = "h2_home"
+                                        id = "h2_Dorm"
                                     >
                                         gal/day
                                     </h2>
@@ -40,22 +40,22 @@ function Home(){
                                 <Row>
                                     <Col>
                                         <h2
-                                            id = "h2_home"
+                                            id = "h2_Dorm"
                                             style={{
                                                 "textAlign":"left"
                                             }}
                                         >
-                                            Total Campus Water Use This Year:
+                                            Total Dorm Water Use This Year:
                                         </h2>
                                     </Col>
                                     <Col>
                                         <h2
-                                            id = "h2_home"
+                                            id = "h2_Dorm"
                                         >
                                             50
                                         </h2>
                                         <h2
-                                            id = "h2_home"
+                                            id = "h2_Dorm"
                                         >
                                             gal
                                         </h2>
@@ -63,22 +63,11 @@ function Home(){
                                 </Row>
                             </div>
                         </Row>
-                        <br/>
-                        <br/>
-                        <Row>
-                            <Col>
-                                <h1 id = "h1_home">Type the name of a dorm here:</h1>
-                                <input 
-                                    type="text" 
-                                    placeholder="Search..."
-                                />
-                            </Col>
-                        </Row>
                     </div>
                     <br/>
                     <br/>
                     <Row>
-                        <LeaderBoard hasDorm={false}/>
+                        <LeaderBoard hasDorm={true}/>
                     </Row>
                 </Col>
             </Container>
@@ -86,4 +75,4 @@ function Home(){
     );
 }
 
-export default Home;
+export default Dorm;
