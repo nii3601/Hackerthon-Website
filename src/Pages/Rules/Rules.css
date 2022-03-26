@@ -26,7 +26,7 @@
         background-repeat: no-repeat;
         background-position: left;
         background-size: 45px;
-        padding: 15px 0 5% 55px;
+        /* padding: 5% 0 5% 55px; */
         height: 55px; 
         list-style: none;    
 }
