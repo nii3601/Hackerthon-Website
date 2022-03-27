@@ -29,6 +29,23 @@ function Dorm(){
         })
     },[dormName]);
     
+
+    function calculateDormAverage(){
+        let sum = 0;
+        for (let section in data){
+            sum += data[section]
+        }
+        return sum/200;
+    }
+
+    function calculateTotalwaterUse(){
+        let sum = 0;
+        for (let section in data){
+            sum += data[section]
+        }
+        return sum;
+    }
+
     return(
         <div className="Dorm">
             <Container fluid>
@@ -53,7 +70,9 @@ function Dorm(){
                                             "textAlign":"left"
                                         }}
                                     >
-                                        50
+                                        {
+                                            calculateDormAverage()
+                                        }
                                     </h1>
                                     <h2
                                         id = "h2_Dorm"
@@ -78,7 +97,9 @@ function Dorm(){
                                         <h2
                                             id = "h2_Dorm"
                                         >
-                                            50
+                                            {
+                                                calculateTotalwaterUse()
+                                            }
                                         </h2>
                                         <h2
                                             id = "h2_Dorm"

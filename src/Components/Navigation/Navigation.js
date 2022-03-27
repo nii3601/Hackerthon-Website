@@ -5,7 +5,7 @@ import './Navigation.css';
 function Navigation() {
     return (
         <div className='Navigation'>
-            <Navbar collapseOnSelect id='Nav-Back' expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect id='Nav-Back' expand="lg" bg="#000000" variant="dark">
                 <Container>
                     <Navbar.Brand id="brand" href="/">
                         Water Wars

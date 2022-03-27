@@ -1,20 +1,54 @@
 import {Container,Row,Col} from 'react-bootstrap';
-import LeaderBoard from '../LeaderBoard/LeaderBoard'
+import LeaderBoard from '../LeaderBoard/LeaderBoard';
+import { getDormNames } from '../../Services/getDormNames';
+import { getTotalUsage } from '../../Services/getTotalUsage';
+import { getHighestScoringSection } from '../../Services/getHighestScoringSection';
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import './Home.css'
+import { useEffect } from 'react';
 
 function Home(){
     let history = useNavigate();
+
     const [formVal, setFormVal] = useState('');
+    const [dormNames,setDormNames] = useState({});
+    const [totalUsage,setTotalUsage] = useState(0);
 
     const handleNameInput = (e) => {
         setFormVal(e.target.value);
     }
 
     const handleSubmit = () => {
-        history('/info/' + formVal);
+        console.log(dormNames);
+        if(dormNames[formVal] === true){
+            history('/info/' + formVal);
+        }
+        else{
+            alert(formVal + " isn't on our system yet :(")
+        }
+        
     }
+
+    
+
+    useEffect(()=>{
+        getDormNames().then((results)=>{
+            for (let i = 0; i < results.length; i++){
+                //output.push(results[i].get("name"));
+                setDormNames(prevdata =>{
+                let newData = {...prevdata}
+                newData[results[i].get("name")] = true
+                return newData
+            });
+            }
+        });
+
+        getTotalUsage().then((sum)=>{
+            setTotalUsage(parseInt(sum));
+        });
+
+    },[]);
 
     return(
         <div className="Home">
@@ -30,7 +64,7 @@ function Home(){
                                             "textAlign":"left"
                                         }}
                                     >
-                                        Total Campus Water Use:
+                                        Total Water Use:
                                     </h1>
                                 </Col>
                                 <Col>
@@ -40,7 +74,7 @@ function Home(){
                                             "textAlign":"left"
                                         }}
                                     >
-                                        50
+                                        {totalUsage}
                                     </h1>
                                     <h2
                                         id = "h2_home"
@@ -50,7 +84,7 @@ function Home(){
                                 </Col>
                             </Row>
                             <div id="row2">
-                                <Row>
+                                {/* <Row>
                                     <Col>
                                         <h2
                                             id = "h2_home"
@@ -68,7 +102,7 @@ function Home(){
                                             Baumer 3a
                                         </h2>
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </div>
                         </Row>
                         <br/>
