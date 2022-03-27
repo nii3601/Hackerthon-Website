@@ -11,6 +11,7 @@ import Dorm from './Pages/DormPage/Dorm';
 import { useEffect } from 'react';
 import { getDormScore } from './Services/getDormScore';
 import {getSectionScore} from './Services/getCampusScore';
+import Register from './Pages/Register/Register';
 
 //initialise parse
 Parse.initialize(env.APPLICATION_ID, env.JAVASCRIPT_KEY);
@@ -44,6 +45,8 @@ function App() {
         <Route path="/leaderboard/:dormID" element={<Leaderboard/>}/> 
         {/* leaderboard for whole school */}
         <Route exact path="/leaderboard/" element={<Leaderboard/>}/>
+        {/* leaderboard for whole school */}
+        <Route exact path="/register/" element={<Register/>}/>
         <Route path="/" exact element={<Home/>} />
       </Routes>
       </div>

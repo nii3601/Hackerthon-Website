@@ -27,7 +27,20 @@
                 font-family: 'Press Start 2P', cursive;
                 font-size: 3vw;
                 text-align: left;
-        }     
+        }    
+        #the_table {
+                padding: 2%;
+                border-style: solid;
+                border-radius: 5px;
+                border-color: #1919A6;
+                width: 80vw;
+                margin-left: 10vw;
+                font-size: 3vw;
+        } 
+
+        #the_table h3 {
+                font-size: 4vw;
+        }
 }
 
 .Dorm h1 {
