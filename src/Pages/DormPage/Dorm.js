@@ -1,12 +1,34 @@
+import { useEffect,useState } from 'react';
+import { useParams } from 'react-router-dom';
 import {Container,Row,Col} from 'react-bootstrap';
+import { getDormLeaderBoard,getDormObj } from '../../Services/getDormLeaderboard';
+import ScoreBoard from "../../Components/ScoreBoard/ScoreBoard";
 import './Dorm.css'
 
 function Dorm(){
-    const type = "Baumer"
-    const content = "Sections"
-    const data = {
-        "3a":"sample","4a" : "sampke"
-    }
+
+    const [data, setData] = useState({});
+
+    let dormName = useParams("dorm").dorm; // for dorm name
+
+    useEffect(()=>{
+        getDormObj(dormName).then((obj)=>{
+            //console.log(obj)
+            getDormLeaderBoard(obj).then((results)=>{ //from here one can get score and section objectID
+                //console.log(results);
+                for (var j = 0; j < results.length; j++){
+                    //console.log(results[i].get("score"))
+                    //console.log(results[i].get("section_pointer").get("name"))
+                    setData(previousData => {
+                        const newData = { ...previousData };
+                        newData[results[j].get("section_pointer").get("name")] = results[j].get("score");
+                        return newData;
+                    });
+                }
+            })
+        })
+    },[dormName]);
+    
     return(
         <div className="Dorm">
             <Container fluid>
@@ -70,36 +92,8 @@ function Dorm(){
                     </div>
                     <br/>
                     <br/>
-                    <Row>
-                        <div id="the_table">
-                            <Row>
-                                <h3>{type} Leaderboard</h3>
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <th>Rank</th>
-                                            <th>{content}</th>
-                                            <th>Score</th>
-                                        </tr>
-                                        {
-                                            Object.keys(data).map((item, index) => {
-                                                return (
-                                                    <tr key={index}>
-                                                        <td>{index + 1}</td>
-                                                        <td>{item}</td>
-                                                        <td>{data[item]}</td>
-                                                    </tr>
-                                                );
-
-                                            })
-                                        }
-
-                                    </tbody>
-
-                                </table>
-                            </Row>
-                        </div>
-                    </Row>
+                        <ScoreBoard
+                        type={dormName+" Hall Section Literboard"} content="Section" data={data} />
                 </Col>
             </Container>
         </div>
