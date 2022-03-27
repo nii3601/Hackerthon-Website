@@ -27,6 +27,27 @@ function Dorm(){
                 }
             })
         })
+
+        const interval = setInterval(()=>{
+            getDormObj(dormName).then((obj)=>{
+                //console.log(obj)
+                getDormLeaderBoard(obj).then((results)=>{ //from here one can get score and section objectID
+                    //console.log(results);
+                    for (var j = 0; j < results.length; j++){
+                        //console.log(results[i].get("score"))
+                        //console.log(results[i].get("section_pointer").get("name"))
+                        setData(previousData => {
+                            const newData = { ...previousData };
+                            newData[results[j].get("section_pointer").get("name")] = results[j].get("score");
+                            return newData;
+                        });
+                    }
+                })
+            })
+        },3000)
+
+        return()=>clearInterval(interval)
+
     },[dormName]);
     
 
