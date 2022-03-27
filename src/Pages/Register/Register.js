@@ -1,5 +1,4 @@
 import {Container,Row,Col} from 'react-bootstrap';
-import LeaderBoard from '../LeaderBoard/LeaderBoard'
 import './Register.css'
 
 function Register(){

@@ -9,8 +9,6 @@ import * as env from "./env.js";
 import Footer from './Components/Footer/Footer';
 import Dorm from './Pages/DormPage/Dorm';
 import { useEffect } from 'react';
-import { getDormScore } from './Services/getDormScore';
-import {getSectionScore} from './Services/getCampusScore';
 import Register from './Pages/Register/Register';
 
 //initialise parse
