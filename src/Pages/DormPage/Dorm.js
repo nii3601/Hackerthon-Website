@@ -58,7 +58,7 @@ function Dorm(){
                                     <h2
                                         id = "h2_Dorm"
                                     >
-                                        gal/day
+                                        liters/day
                                     </h2>
                                 </Col>
                             </Row>
@@ -83,7 +83,7 @@ function Dorm(){
                                         <h2
                                             id = "h2_Dorm"
                                         >
-                                            gal
+                                            liters
                                         </h2>
                                     </Col>
                                 </Row>
