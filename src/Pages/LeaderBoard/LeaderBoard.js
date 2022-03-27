@@ -1,44 +1,40 @@
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ScoreBoard from "../../Components/ScoreBoard/ScoreBoard";
-import { getCampusScores } from '../../Services/getCampusScore';
-import {getSectionScores} from '../../Services/getDormScore';
+import { getCampusLeaderboard, getScores } from '../../Services/getCampusLeaderboard';
 import logo from '../../Images/drippy.png';
 import "./LeaderBoard.css";
 
 function Leaderboard() {
-
     const [data, setData] = useState({});
-    // const [data_2, setData_2] = useState({});
-    //const [dormName,setDormName] = useState("");
-
-
+    const [flag, setFlag] = useState(false);
 
 
     let dormID = useParams("dormID").dormID; // for dorm name
 
 
     useEffect(() => {
-        console.log(dormID);
-        if (dormID) {
-            // getSectionScores(dormID).then((value) => {
 
-            // });
+        if (dormID) {
+            setFlag(true);
 
         }
         else {
-            //if not then just get general campus dorms leaderboard
-            // getCampusScores().then((result) => {
-            //     // console.log(result);
-                
-            //     // setData(data=>({
-            //     //     ...result
-            //     // }));
-            //     //console.log(data)
-            //     //console.log("Data is now:", data);
-            // });
+            getCampusLeaderboard().then((result) => {
+                for (var i = 0; i < result.length; i++) {
+                    const name = result[i].get("name");
+                    getScores(result[i]).then((score) => {
+                        setData(previousData => {
+                            const newData = { ...previousData };
+                            newData[name] = score;
+                            return newData;
+                        });
+                    });
+                }
+            })
         }
-    }, [dormID]);
+
+    }, []);
 
     return (
         <div className="LeaderBoard">
@@ -63,14 +59,46 @@ function Leaderboard() {
                 className="d-inline-block align-center"
                 alt="Water Wars logo"
             />
-            {
+            {/* {
                 dormID ?
                     <ScoreBoard
                         type={dormID} content="Sections" data={{"3a":"sample","4a" : "sampke"}} />
                     :
                     <ScoreBoard
-                        type="Campus Dorms" content="Dorms" data={{"sample":"sample"}} />
+                        type="Campus Dorms" content="Dorms" data={{
+                            "O'Neil": 6278,
+                            "Duncan": 6792,
+                            "Ryan": 6597,
+                            "Keogh": 6821,
+                            "McGlinn": 6052,
+                            "Baumer": 3748,
+                            "Welsh Family": 5569
+                          }} />
+            } */}
+
+            {/* <ScoreBoard
+                        type="Campus Dorms" content="Dorms" data={{
+                            "O'Neil": 6278,
+                            "Duncan": 6792,
+                            "Ryan": 6597,
+                            "Keogh": 6821,
+                            "McGlinn": 6052,
+                            "Baumer": 3748,
+                            "Welsh Family": 5569
+                          }} /> */}
+
+            {
+                flag ?
+                    <ScoreBoard
+                        type="Dorms" content="Section" data={data} />
+                    :
+                    <ScoreBoard
+                        type="Campus Dorms" content="Dorms" data={data} />
             }
+
+            {/* <ScoreBoard
+                type="Campus Dorms" content="Dorms" data={data} /> */}
+
         </div>
     );
 }

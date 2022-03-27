@@ -1,14 +1,17 @@
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import "./ScoreBoard.css"
 
 
 // When sections are passed in, if type is dorm then its dorm and if type is section then section
 
-function ScoreBoard({ type, content, data }) {
+function ScoreBoard({ type, content, data}) {
+
+    // console.log(nameList);
+    // console.log(scoreList);
 
     useEffect(()=>{
-
+        
     },[]);
 
 
@@ -24,6 +27,13 @@ function ScoreBoard({ type, content, data }) {
                                 <th>{content}</th>
                                 <th>Score</th>
                             </tr>
+
+                            {/* <tr>
+                                            <td>0</td>
+                                            <td>{nameList[0]}</td>
+                                            <td>{nameList[0]}</td>
+                                        </tr> */}
+
                             {
                                 Object.keys(data).map((item, index) => {
                                     return (
@@ -36,6 +46,7 @@ function ScoreBoard({ type, content, data }) {
 
                                 })
                             }
+                            
 
                         </tbody>
 
