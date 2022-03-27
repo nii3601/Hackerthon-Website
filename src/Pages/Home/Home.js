@@ -78,7 +78,7 @@ function Home(){
                     <br/>
                     <br/>
                     <Row>
-                        <LeaderBoard hasDorm={false}/>
+                        <LeaderBoard/>
                     </Row>
                 </Col>
             </Container>
