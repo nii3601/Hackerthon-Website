@@ -10,22 +10,34 @@ function ScoreBoard({ type, content, data}) {
     // console.log(nameList);
     // console.log(scoreList);
 
+    const [ranking, setRankings] = useState({});
+
+
+
     useEffect(()=>{
+        console.log(data);
+        const sortable = Object.entries(data)
+    .sort(([,a],[,b]) => a-b)
+    .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
+    
+    setRankings(sortable);
+    
         
-    },[]);
+    },[data]);
 
 
     return (
         <div className="ScoreBoard">
             <Container>
                 <Row>
-                    <h3>{type} Leaderboard</h3>
-                    <table>
+                    <h3>{type}</h3>
+                    <table id="table">
                         <tbody>
                             <tr>
                                 <th>Rank</th>
                                 <th>{content}</th>
-                                <th>Score</th>
+                                <th>Volume</th>
+                                
                             </tr>
 
                             {/* <tr>
@@ -35,13 +47,15 @@ function ScoreBoard({ type, content, data}) {
                                         </tr> */}
 
                             {
-                                Object.keys(data).map((item, index) => {
+                                Object.keys(ranking).map((item, index) => {
                                     return (
-                                        <tr key={index}>
+                                            <tr key={index}>
                                             <td>{index + 1}</td>
                                             <td>{item}</td>
-                                            <td>{data[item]}</td>
+                                            <td>{ranking[item]}</td>
                                         </tr>
+                                        
+                                        
                                     );
 
                                 })

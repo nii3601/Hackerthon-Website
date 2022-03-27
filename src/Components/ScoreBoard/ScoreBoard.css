@@ -16,4 +16,11 @@
 
 .ScoreBoard h3{
     margin-bottom: 2%;
+    text-decoration: underline;
+    color : #00A1E0
 }
+
+
+table tr:nth-of-type(2) {color: #FEE101;}
+table tr:nth-of-type(3) {color: #A7A7AD;}
+table tr:nth-of-type(4) {color: #A77044;}

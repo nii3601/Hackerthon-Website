@@ -41,7 +41,7 @@ function App() {
         {/* For rules */}
         <Route path="/rules" element={<Rules/>}/> 
 
-        <Route exact path="/leaderboard/:dormID" element={<Leaderboard/>}/> 
+        <Route exact path="/leaderboard/:dormName" element={<Leaderboard/>}/> 
         {/* Leader board for specific dorm i.e sections */}
         <Route path="/leaderboard" element={<Leaderboard/>}/> 
         <Route path="/" exact element={<Home/>} />

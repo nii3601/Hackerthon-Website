@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ScoreBoard from "../../Components/ScoreBoard/ScoreBoard";
 import { getCampusLeaderboard, getScores } from '../../Services/getCampusLeaderboard';
+import { getDormLeaderBoard,getDormObj } from '../../Services/getDormLeaderboard';
 import logo from '../../Images/drippy.png';
 import "./LeaderBoard.css";
 
@@ -10,13 +11,29 @@ function Leaderboard() {
     const [flag, setFlag] = useState(false);
 
 
-    let dormID = useParams("dormID").dormID; // for dorm name
+    let dormName = useParams("dormName").dormName; // for dorm name
 
 
     useEffect(() => {
 
-        if (dormID) {
+        if (dormName) {
+            //console.log(dormName);
             setFlag(true);
+            getDormObj(dormName).then((obj)=>{
+                //console.log(obj)
+                getDormLeaderBoard(obj).then((results)=>{ //from here one can get score and section objectID
+                    //console.log(results);
+                    for (var j = 0; j < results.length; j++){
+                        //console.log(results[i].get("score"))
+                        //console.log(results[i].get("section_pointer").get("name"))
+                        setData(previousData => {
+                            const newData = { ...previousData };
+                            newData[results[j].get("section_pointer").get("name")] = results[j].get("score");
+                            return newData;
+                        });
+                    }
+                })
+            });
 
         }
         else {
@@ -34,7 +51,7 @@ function Leaderboard() {
             })
         }
 
-    }, []);
+    }, [dormName]);
 
     return (
         <div className="LeaderBoard">
@@ -59,41 +76,14 @@ function Leaderboard() {
                 className="d-inline-block align-center"
                 alt="Water Wars logo"
             />
-            {/* {
-                dormID ?
-                    <ScoreBoard
-                        type={dormID} content="Sections" data={{"3a":"sample","4a" : "sampke"}} />
-                    :
-                    <ScoreBoard
-                        type="Campus Dorms" content="Dorms" data={{
-                            "O'Neil": 6278,
-                            "Duncan": 6792,
-                            "Ryan": 6597,
-                            "Keogh": 6821,
-                            "McGlinn": 6052,
-                            "Baumer": 3748,
-                            "Welsh Family": 5569
-                          }} />
-            } */}
-
-            {/* <ScoreBoard
-                        type="Campus Dorms" content="Dorms" data={{
-                            "O'Neil": 6278,
-                            "Duncan": 6792,
-                            "Ryan": 6597,
-                            "Keogh": 6821,
-                            "McGlinn": 6052,
-                            "Baumer": 3748,
-                            "Welsh Family": 5569
-                          }} /> */}
 
             {
                 flag ?
                     <ScoreBoard
-                        type="Dorms" content="Section" data={data} />
+                        type={dormName+" Hall Section Literboard"} content="Section" data={data} />
                     :
                     <ScoreBoard
-                        type="Campus Dorms" content="Dorms" data={data} />
+                        type="Campus Dorm Literboard" content="Dorms" data={data} />
             }
 
             {/* <ScoreBoard
