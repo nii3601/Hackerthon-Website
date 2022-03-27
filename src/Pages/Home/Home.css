@@ -2,13 +2,13 @@
 
 #not_leaderboard {
         margin-top: 5vh;
-        margin-left: 5%;
+        margin-left: 5vw;
 }
 
 #row2 {
         margin-top: 2vh;
 }
-@media screen and (max-width:500px){
+@media screen and (max-width:900px){
         #h1_home {
                 color:#ffffff;
                 font-family: 'Press Start 2P', cursive;
@@ -21,7 +21,18 @@
                 font-family: 'Press Start 2P', cursive;
                 font-size: 3vw;
                 text-align: left;
-        }     
+        }   
+        #search_bar {
+                width: 55vw;
+        }  
+        #submit_button {
+                height: 5vh;
+                width: min-content;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 2vw;
+                color: #ffffff;
+                transform: translate(-3vw);
+        }
 }
 
 .Home h1 {
@@ -41,7 +52,6 @@
 
 .Home input[type=text] {
         width: 80vw;
-        transform: translate(-8%);
 }
 
 .Home input[type=text], textarea{
@@ -49,6 +59,20 @@
         font-family: 'Press Start 2P', cursive;
         color: #ffffff;
         background-color : black;
+        height: 5vh;
+}
+
+#submit_button {
+        background-color: #000000;
+        border-style: solid;
+        border-radius: 5px;
+        border-color: #ffffff;
+        height: 5vh;
+        width: min-content;
+        padding: 5%;
+        font-size: 2vh;
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

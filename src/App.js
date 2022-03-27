@@ -9,7 +9,9 @@ import * as env from "./env.js";
 import Footer from './Components/Footer/Footer';
 import Dorm from './Pages/DormPage/Dorm';
 import { useEffect } from 'react';
-
+import { getDormScore } from './Services/getDormScore';
+import {getSectionScore} from './Services/getCampusScore';
+import Register from './Pages/Register/Register';
 
 //initialise parse
 Parse.initialize(env.APPLICATION_ID, env.JAVASCRIPT_KEY);
@@ -42,8 +44,9 @@ function App() {
         <Route path="/rules" element={<Rules/>}/> 
 
         <Route exact path="/leaderboard/:dormName" element={<Leaderboard/>}/> 
-        {/* Leader board for specific dorm i.e sections */}
+        <Route exact path="/register/" element={<Register/>}/>
         <Route path="/leaderboard" element={<Leaderboard/>}/> 
+
         <Route path="/" exact element={<Home/>} />
       </Routes>
       </div>

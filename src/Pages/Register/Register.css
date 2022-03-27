@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@media screen and (max-width:500px){
+        #h1_Register {
+                color:#ffffff;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 5vw;
+                text-align:left;
+        }
+        
+        #h2_Register {
+                color:#ffffff;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 3vw;
+                text-align: left;
+        }     
+}
+
+.Register {
+        padding:2%;
+        gap:1%;
+}
+
+.Register h1 {
+        color:#ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 30px;
+        text-align: left;
+}
+
+.Register h2 {
+        color:#ffffff;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 20px;
+        text-align: left;
+}  
+
+.Register input[type=text] {
+        width: 80vw;
+}
+
+.Register input[type=text], textarea{
+        font-size: 17px;
+        font-family: 'Press Start 2P', cursive;
+        color: #ffffff;
+        background-color : black;
+}
+
+#field {
+        margin-bottom: 2vh;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #ffffff;
+}
+      
+      

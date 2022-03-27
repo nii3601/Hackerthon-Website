@@ -1,8 +1,21 @@
 import {Container,Row,Col} from 'react-bootstrap';
 import LeaderBoard from '../LeaderBoard/LeaderBoard'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import './Home.css'
 
 function Home(){
+    let history = useNavigate();
+    const [formVal, setFormVal] = useState('');
+
+    const handleNameInput = (e) => {
+        setFormVal(e.target.value);
+    }
+
+    const handleSubmit = () => {
+        history('/info/' + formVal);
+    }
+
     return(
         <div className="Home">
             <Container fluid>
@@ -68,10 +81,26 @@ function Home(){
                         <Row>
                             <Col>
                                 <h1 id = "h1_home">Type the name of a dorm here:</h1>
-                                <input 
-                                    type="text" 
-                                    placeholder="Search..."
-                                />
+                                <Row>
+                                    <Col>
+                                    <input 
+                                        id="search_bar"
+                                        onChange={handleNameInput}
+                                        type="text" 
+                                        placeholder="Search..."
+                                        value={formVal}
+                                    />
+                                    </Col>
+                                    <Col>
+                                    <div
+                                        id="submit_button"
+                                        onClick={handleSubmit}
+                                    >
+                                        Submit
+                                    </div>
+                                    </Col>
+    
+                                </Row>
                             </Col>
                         </Row>
                     </div>
