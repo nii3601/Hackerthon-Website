@@ -30,7 +30,7 @@ function Home(){
                                             "textAlign":"left"
                                         }}
                                     >
-                                        Average Campus Water Use Per Day:
+                                        Total Campus Water Use:
                                     </h1>
                                 </Col>
                                 <Col>
@@ -45,7 +45,7 @@ function Home(){
                                     <h2
                                         id = "h2_home"
                                     >
-                                        gal/day
+                                        Liters
                                     </h2>
                                 </Col>
                             </Row>
@@ -58,19 +58,14 @@ function Home(){
                                                 "textAlign":"left"
                                             }}
                                         >
-                                            Total Campus Water Use This Year:
+                                            Highest Scoring Section:
                                         </h2>
                                     </Col>
                                     <Col>
                                         <h2
                                             id = "h2_home"
                                         >
-                                            50
-                                        </h2>
-                                        <h2
-                                            id = "h2_home"
-                                        >
-                                            gal
+                                            Baumer 3a
                                         </h2>
                                     </Col>
                                 </Row>
