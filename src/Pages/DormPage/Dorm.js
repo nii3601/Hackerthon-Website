@@ -1,5 +1,5 @@
 import {Container,Row,Col} from 'react-bootstrap';
-import LeaderBoard from '../LeaderBoard/LeaderBoard'
+import ScoreBoard from '../../Components/ScoreBoard/ScoreBoard'
 import './Dorm.css'
 
 function Dorm(){
@@ -67,7 +67,7 @@ function Dorm(){
                     <br/>
                     <br/>
                     <Row>
-                        <LeaderBoard hasDorm={true}/>
+                        <ScoreBoard type="Baumer" content="Sections" data={{"3a":"sample","4a" : "sampke"}} />
                     </Row>
                 </Col>
             </Container>
