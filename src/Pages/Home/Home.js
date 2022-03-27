@@ -48,6 +48,25 @@ function Home(){
             setTotalUsage(parseInt(sum));
         });
 
+        const interval = setInterval(()=>{
+            getDormNames().then((results)=>{
+                for (let i = 0; i < results.length; i++){
+                    //output.push(results[i].get("name"));
+                    setDormNames(prevdata =>{
+                    let newData = {...prevdata}
+                    newData[results[i].get("name")] = true
+                    return newData
+                });
+                }
+            });
+    
+            getTotalUsage().then((sum)=>{
+                setTotalUsage(parseInt(sum));
+            });
+        },3000)
+
+        return()=>clearInterval(interval)
+
     },[]);
 
     return(
